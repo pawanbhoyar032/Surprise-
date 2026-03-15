@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Have a Surprise For You!</title>
+    <style>
+        /* फोटोच्या बॅकग्राउंडला मॅच होणारा क्रीम/ऑफ-व्हाईट कलर */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fdfae6; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* गोल्डन स्पार्कल इफेक्ट (Animation) */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: gold;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffd700, 0 0 20px #fff;
+            opacity: 0;
+            animation: fly 3s infinite linear;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fly {
+            0% { transform: translateY(0) translateX(0); opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        h1 {
+            color: #b8860b;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sparkle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="left: 50%; animation-delay: 0.5s;"></div>
+    <div class="sparkle" style="left: 70%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="left: 90%; animation-delay: 0.2s;"></div>
+
+    <div class="container">
+        <h1>✨ I Have a Surprise For You! ✨</h1>
+        <img src="तुमच्या_फोटोची_लिंक_येथे_टाका" alt="Bouquet Surprise">
+    </div>
+
+</body>
+</html>
