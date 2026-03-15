@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* बॅकग्राउंड कलर फोटोला मॅच करण्यासाठी */
         body {
             margin: 0;
             padding: 0;
@@ -16,82 +15,85 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; /* स्क्रीन स्क्रोल होणार नाही */
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .container {
             text-align: center;
             width: 100%;
-            max-width: 600px; /* डेस्कटॉपवर खूप मोठे दिसू नये म्हणून */
-            padding: 20px;
+            max-width: 500px;
+            padding: 15px;
             box-sizing: border-box;
             position: relative;
             z-index: 10;
         }
 
-        /* नवीन फॉन्ट स्टाईल (H1) */
         h1 {
             font-family: 'Dancing Script', cursive;
             color: #b8860b;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        /* फोटो सेटिंग - मोबाईल आणि डेस्कटॉप दोन्हीसाठी */
         img {
-            width: 100%; /* मोबाईलवर स्क्रीननुसार ॲडजस्ट होईल */
-            max-width: 500px; /* डेस्कटॉपवर जास्त मोठा होणार नाही */
+            width: 100%;
+            max-width: 450px;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             animation: fadeIn 2s ease-in-out;
-            border: 5px solid #fff; /* फोटोला व्हाईट बॉर्डर */
+            border: 4px solid #fff;
         }
 
-        /* गोल्डन स्पार्कल इफेक्ट (Animation) */
+        /* गोल्डन स्पार्कल इफेक्ट */
         .sparkle {
             position: absolute;
-            width: 6px;
-            height: 6px;
-            background: linear-gradient(gold, #fff);
+            width: 4px;
+            height: 4px;
+            background: gold;
             border-radius: 50%;
-            box-shadow: 0 0 10px #ffd700;
+            box-shadow: 0 0 8px #ffd700;
             opacity: 0;
-            animation: fly 4s infinite linear;
+            animation: fly 5s infinite linear;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         @keyframes fly {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            0% { transform: translateY(100vh); opacity: 0; }
             50% { opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(-10vh); opacity: 0; }
         }
 
-        /* मोबाईलसाठी फॉन्ट साईज थोडी लहान केली */
+        /* मोबाईल व्ह्यू रिस्पॉन्सिव्ह सेटिंग */
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.4rem; /* मोबाईलवर एकदम परफेक्ट फिट बसेल */
+                white-space: nowrap;
+                margin-bottom: 10px;
+            }
+            img {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="sparkle" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="sparkle" style="left: 25%; animation-delay: 2s;"></div>
-    <div class="sparkle" style="left: 45%; animation-delay: 1s;"></div>
-    <div class="sparkle" style="left: 65%; animation-delay: 3s;"></div>
-    <div class="sparkle" style="left: 85%; animation-delay: 0.5s;"></div>
+    <div class="sparkle" style="left: 15%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="left: 35%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="left: 55%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="left: 75%; animation-delay: 3s;"></div>
+    <div class="sparkle" style="left: 90%; animation-delay: 0.5s;"></div>
 
     <div class="container">
         <h1>✨ I Have a Surprise For You! ✨</h1>
-        <img src="Image.jpg" alt="Special Bouquet Surprise">
+        <img src="Image.jpg" alt="Special Surprise">
     </div>
 
 </body>
