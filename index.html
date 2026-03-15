@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Have a Surprise For You!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        /* फोटोच्या बॅकग्राउंडला मॅच होणारा क्रीम/ऑफ-व्हाईट कलर */
+        /* बॅकग्राउंड कलर फोटोला मॅच करण्यासाठी */
         body {
             margin: 0;
             padding: 0;
@@ -13,66 +15,84 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .container {
             text-align: center;
+            width: 100%;
+            max-width: 600px; /* डेस्कटॉपवर खूप मोठे दिसू नये म्हणून */
+            padding: 20px;
+            box-sizing: border-box;
             position: relative;
             z-index: 10;
         }
 
+        /* नवीन फॉन्ट स्टाईल (H1) */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #b8860b;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* फोटो सेटिंग - मोबाईल आणि डेस्कटॉप दोन्हीसाठी */
         img {
-            max-width: 90%;
-            max-height: 80vh;
+            width: 100%; /* मोबाईलवर स्क्रीननुसार ॲडजस्ट होईल */
+            max-width: 500px; /* डेस्कटॉपवर जास्त मोठा होणार नाही */
+            height: auto;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             animation: fadeIn 2s ease-in-out;
+            border: 5px solid #fff; /* फोटोला व्हाईट बॉर्डर */
         }
 
         /* गोल्डन स्पार्कल इफेक्ट (Animation) */
         .sparkle {
             position: absolute;
-            width: 5px;
-            height: 5px;
-            background: gold;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(gold, #fff);
             border-radius: 50%;
-            box-shadow: 0 0 10px #ffd700, 0 0 20px #fff;
+            box-shadow: 0 0 10px #ffd700;
             opacity: 0;
-            animation: fly 3s infinite linear;
+            animation: fly 4s infinite linear;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fly {
-            0% { transform: translateY(0) translateX(0); opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
 
-        h1 {
-            color: #b8860b;
-            margin-bottom: 20px;
+        /* मोबाईलसाठी फॉन्ट साईज थोडी लहान केली */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="sparkle" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="sparkle" style="left: 30%; animation-delay: 1s;"></div>
-    <div class="sparkle" style="left: 50%; animation-delay: 0.5s;"></div>
-    <div class="sparkle" style="left: 70%; animation-delay: 1.5s;"></div>
-    <div class="sparkle" style="left: 90%; animation-delay: 0.2s;"></div>
+    <div class="sparkle" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="left: 45%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="left: 65%; animation-delay: 3s;"></div>
+    <div class="sparkle" style="left: 85%; animation-delay: 0.5s;"></div>
 
     <div class="container">
-    <h1>✨ I Have a Surprise For You! ✨</h1>
-    <img src="Image.jpg"
-        >
-</div>
+        <h1>✨ I Have a Surprise For You! ✨</h1>
+        <img src="Image.jpg" alt="Special Bouquet Surprise">
+    </div>
 
 </body>
 </html>
